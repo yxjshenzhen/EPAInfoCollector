@@ -83,7 +83,7 @@ public class CrawServiceImpl implements CrawService {
             String[] matchUrls = tbCrawlRule.getMatchUrl().split(",");
             //初始化爬虫引擎，此时由于没有初始请求，爬虫引擎会阻塞初始队列，直到获取到初始请求
             GeccoEngine ge =  GeccoEngine.create("cn.com.xiaofabo.hca.epainfocollector.craw")
-                    .debug(false)
+                    .debug(false).loop(true)
                     .interval(2000).engineStart();
 
 
