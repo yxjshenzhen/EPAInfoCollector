@@ -5,16 +5,16 @@ use crawl;
 -- Table structure for tb_crawl_content
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_crawl_content`;
-CREATE TABLE `tb_crawl_content`  (
+CREATE TABLE `tb_crawl_content` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `start_url` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `body_content` mediumblob NULL,
-  `create_time` datetime(0) NULL DEFAULT CURRENT_TIMESTAMP(0),
-  `update_time` datetime(0) NULL DEFAULT CURRENT_TIMESTAMP(0) ON UPDATE CURRENT_TIMESTAMP(0),
-  PRIMARY KEY (`id`) USING BTREE,
-  UNIQUE INDEX `idx_un_url`(`start_url`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+  `start_url` varchar(500) DEFAULT NULL,
+  `title` mediumblob,
+  `body_content` mediumblob,
+  `create_time` datetime DEFAULT CURRENT_TIMESTAMP,
+  `update_time` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `idx_un_url` (`start_url`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 
 -- ----------------------------
