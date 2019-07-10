@@ -1,3 +1,6 @@
+CREATE DATABASE IF NOT EXISTS crawl default charset utf8 COLLATE utf8_general_ci;
+
+use crawl;
 -- ----------------------------
 -- Table structure for tb_crawl_content
 -- ----------------------------
@@ -11,7 +14,7 @@ CREATE TABLE `tb_crawl_content`  (
   `update_time` datetime(0) NULL DEFAULT CURRENT_TIMESTAMP(0) ON UPDATE CURRENT_TIMESTAMP(0),
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `idx_un_url`(`start_url`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 408042 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 
 -- ----------------------------
@@ -76,7 +79,6 @@ CREATE TABLE `tb_crawl_menu`  (
 -- Records of tb_crawl_menu
 -- ----------------------------
 INSERT INTO `tb_crawl_menu` VALUES ('/business/collect', '手动抓取', '0,100', 10, 2, '/business/collect', 1, NULL, 0);
-INSERT INTO `tb_crawl_menu` VALUES ('/business/mailTemplate', '抓取页面', '0,system', 10, 2, '/business/mailTemplate', 1, NULL, 0);
 INSERT INTO `tb_crawl_menu` VALUES ('100', '数据管理', '0', 11, 1, ' ', 0, NULL, 0);
 INSERT INTO `tb_crawl_menu` VALUES ('1001', '数据列表', '0,100', 10, 2, '/business/list', 0, NULL, 0);
 INSERT INTO `tb_crawl_menu` VALUES ('menu', '菜单管理', '0,system', 2, 1, '/menu', 1, NULL, 0);

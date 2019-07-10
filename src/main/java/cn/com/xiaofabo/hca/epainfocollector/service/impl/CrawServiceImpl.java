@@ -74,7 +74,7 @@ public class CrawServiceImpl implements CrawService {
         LocalCache.set(key,null);
         if (!StringUtils.isEmpty(paraObj)) {
             String[] paraStr = paraObj.toString().split("\\$");
-            mailService.sendHtmlMail(paraStr[2].split(","), "环境局信息收集系统邮件通知", "/mailTemplate", paraObj);
+            mailService.sendHtmlMail(paraStr[2].split(","), "环境局信息收集系统邮件通知", "mailTemplate", paraObj);
             LocalCache.set(key,null);
             return;
         }
